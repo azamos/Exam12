@@ -2,5 +2,19 @@
 
 int* processDigits(int numbers[], int size)
 {
-	return NULL;
+	/*Initialise array to be zeros*/
+	int arr[10] = { 0 };
+	for (int i = 0; i < size; i++) {
+		int num = numbers[i];
+		/*Traversing over the digits of the number numbers[i]*/
+		while (num) {
+			int dig = num % 10;
+			/*Instructions demanded we only care about appearances of digits 1-9*/
+			if (num) {
+				arr[dig] = 10* arr[dig] + dig;
+			}
+			num /= 10;
+		}
+	}
+	return arr;
 }
