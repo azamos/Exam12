@@ -12,10 +12,9 @@ int* processDigits(int numbers[], int size)
 		/*Traversing over the digits of the number numbers[i]*/
 		while (num) {
 			int dig = num % 10;
-			/*Instructions demanded we only care about appearances of digits 1-9*/
-			if (num) {
-				arr[dig] = 10* arr[dig] + dig;
-			}
+			/*Instructions demanded we only care about appearances of digits 1-9.
+			the formula bellow, in the case of 0, won't affect a thing, so I removed a redundent if(dig) statement*/
+			arr[dig] = 10* arr[dig] + dig;	
 			num /= 10;
 		}
 	}
