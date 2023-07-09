@@ -3,7 +3,10 @@
 int* processDigits(int numbers[], int size)
 {
 	/*Initialise array to be zeros*/
-	int arr[10] = { 0 };
+	int* arr = (int*)malloc(10 * sizeof(int));
+	for (int j = 0; j < 10; j++) {
+		arr[j] = 0;
+	}
 	for (int i = 0; i < size; i++) {
 		int num = numbers[i];
 		/*Traversing over the digits of the number numbers[i]*/
